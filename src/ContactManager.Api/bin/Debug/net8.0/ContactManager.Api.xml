@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ContactManager.Api</name>
+    </assembly>
+    <members>
+        <member name="M:ContactManager.Api.Controllers.ContactsController.GetAll(System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Lista contatos ativos por padrão. Envie includeInactive=true para incluir os inativos.
+            </summary>
+        </member>
+        <member name="M:ContactManager.Api.Controllers.ContactsController.GetById(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Busca um contato pelo identificador.
+            </summary>
+        </member>
+        <member name="M:ContactManager.Api.Controllers.ContactsController.Create(ContactManager.Api.Contracts.Requests.CreateContactRequest,System.Threading.CancellationToken)">
+            <summary>
+            Cria um novo contato.
+            </summary>
+        </member>
+        <member name="M:ContactManager.Api.Controllers.ContactsController.Update(System.Guid,ContactManager.Api.Contracts.Requests.UpdateContactRequest,System.Threading.CancellationToken)">
+            <summary>
+            Atualiza um contato ativo.
+            </summary>
+        </member>
+        <member name="M:ContactManager.Api.Controllers.ContactsController.Activate(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Ativa um contato previamente desativado.
+            </summary>
+        </member>
+        <member name="M:ContactManager.Api.Controllers.ContactsController.Deactivate(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Desativa um contato.
+            </summary>
+        </member>
+        <member name="M:ContactManager.Api.Controllers.ContactsController.Delete(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Remove permanentemente um contato.
+            </summary>
+        </member>
+    </members>
+</doc>
