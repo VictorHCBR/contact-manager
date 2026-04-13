@@ -1,0 +1,28 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: contacts-sqlserver
+    environment:
+      ACCEPT_EULA: 'Y'
+      MSSQL_SA_PASSWORD: 'Senh4@321'
+    ports:
+      - '1433:1433'
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: contacts-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Docker
+      ConnectionStrings__SqlServer: 'Server=sqlserver,1433;Database=ContactsDb;User Id=sa;Password=Senh4@321;TrustServerCertificate=True;Encrypt=False'
+      Cors__AllowedOrigins__0: '*'
+    ports:
+      - '8080:8080'
+    depends_on:
+      - sqlserver
+
+volumes:
+  sqlserver_data:
